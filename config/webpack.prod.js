@@ -9,13 +9,15 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename: '[name].[contenthash].js',
-        publicPath: ' /dist/'
+        publicPath: "https://mfe-container.herokuapp.com/dist/",
+        // publicPath: "http://localhost:5050/dist/"
     },
     plugins: [
         new ModuleFederationPlugin({
             name: 'container',
             remotes: {
                 marketing: `marketing@https://mfe-marketing.herokuapp.com/dist/remoteEntry.js`
+                // marketing: 'marketing@http://localhost:5000/dist/remoteEntry.js',
             },
             shared: packageJson.dependencies
         })
@@ -23,10 +25,3 @@ const prodConfig = {
 };
 
 module.exports= merge(commonConfig, prodConfig);
-
-/*
-
- remotes: {
-    marketing: `marketing@${domain}/marketing/remoteEntry.js`
-    },
-*/
