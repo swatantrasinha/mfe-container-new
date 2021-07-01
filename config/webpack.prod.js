@@ -9,7 +9,7 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename: '[name].[contenthash].js',
-        publicPath: "https://mfe-container.herokuapp.com/dist/",
+        publicPath: "http://mfe-container.herokuapp.com/dist/",
         // publicPath: "http://localhost:5050/dist/"
     },
     plugins: [
